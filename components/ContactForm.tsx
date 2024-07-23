@@ -30,7 +30,7 @@ const ContactForm = () => {
         setStatus(`Failed to send email. ${errorData.error || ''}`);
       }
     } catch (error) {
-      setStatus('Failed to send email.');
+      setStatus('Error.');
       console.error('Error:', error);
     }
   };

@@ -1,4 +1,3 @@
-"use server"
 import nodemailer from 'nodemailer';
 
 export const POST = async (req) => {
@@ -28,7 +27,7 @@ export const POST = async (req) => {
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: "labidimahdi99@gmail.com",
-      subject: 'New Contact Form Submission',
+      subject: 'contact',
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
 
