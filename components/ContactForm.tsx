@@ -1,4 +1,5 @@
 'use client';
+'use client';
 import React, { useState } from 'react';
 
 const ContactForm = () => {
@@ -13,7 +14,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/contact-me', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
