@@ -13,7 +13,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/contact-me', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const ContactForm = () => {
     }
   };
 
-  
+
   return (
     <form onSubmit={handleSubmit}>
       <h2 className="text-2xl font-bold mb-5 text-white">Contact Me</h2>
