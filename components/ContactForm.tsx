@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useState } from 'react';
 
 const ContactForm = () => {
@@ -13,7 +13,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://portfolio-labidi-mahdi-75.vercel.app/contact-me', {
+      const response = await fetch('/contact-me', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,10 +25,12 @@ const ContactForm = () => {
         setStatus('Email sent successfully!');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('Failed to send email.1');
+        const errorData = await response.json();
+        setStatus(`Failed to send email. ${errorData.error || ''}`);
       }
     } catch (error) {
-      setStatus('failed to send email.2');
+      setStatus('Failed to send email.');
+      console.error('Error:', error);
     }
   };
 
