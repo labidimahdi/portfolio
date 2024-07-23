@@ -34,6 +34,7 @@ const ContactForm = () => {
     }
   };
 
+  
   return (
     <form onSubmit={handleSubmit}>
       <h2 className="text-2xl font-bold mb-5 text-white">Contact Me</h2>
