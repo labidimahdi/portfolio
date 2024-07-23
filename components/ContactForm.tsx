@@ -22,7 +22,8 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        setStatus('Email sent successfully!');
+        const data = await response.json();
+        setStatus(data.message);
         setFormData({ name: '', email: '', message: '' });
       } else {
         const errorData = await response.json();
@@ -33,7 +34,6 @@ const ContactForm = () => {
       console.error('Error:', error);
     }
   };
-
 
   return (
     <form onSubmit={handleSubmit}>
